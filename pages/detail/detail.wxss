@@ -1,0 +1,23 @@
+.container {
+  padding: 20rpx;
+}
+.title {
+  font-size: 48rpx;
+  margin-bottom: 20rpx;
+}
+.info {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.content {
+  font-size: 28rpx;
+}
+.paragraph {
+  margin-bottom: 16rpx;
+}
+.image {
+  width: 100%;
+}

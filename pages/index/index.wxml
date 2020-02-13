@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<navigation-bar logo="{{logo}}" />
+<view class="container">
+  <scroll-view scroll-x class="navigation">
+    <view class='forecast-list'>
+      <view class="forecast-item {{selected === item.key ? 'active' : ''}}" wx:for="{{categories}}" wx:key="key" data-key="{{item.key}}" bindtap="changeNewsType">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y class="news">
+    <view class="news-list">
+      <!-- 将列表中第一个新闻标记出来，通过样式处理为热点新闻 -->
+      <view class="news-item {{index === 0 ? 'hot' : ''}}" wx:for="{{newsList}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+        <view class="info">
+          <text class="title">{{item.title}}</text>
+          <text class="source">{{item.source}}</text>
+          <text class="date">{{item.formatedDate}}</text>
+        </view>
+        <view class="image">
+        <!-- 当图片链接不存在时，使用placeholder -->
+          <image mode="{{index === 0 ? 'center': 'aspectFill'}}" src="{{item.firstImage && item.firstImage !== '' ? item.firstImage : '../../assets/images/timg.jpeg'}}"></image>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+</view>

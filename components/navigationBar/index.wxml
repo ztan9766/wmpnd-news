@@ -1,0 +1,10 @@
+<view class="wrapper" style="background: {{bg}}; color: {{color}};">
+  <view class="arrow" wx:if="{{ showBack }}" bindtap="back"></view>
+
+  <view class="title" style="height: {{titleHeight}}px">
+    <view class="logo">
+      <image mode="widthFix" src="{{ logo }}"></image>
+    </view>
+    <text>{{ title }}</text>
+  </view>
+</view>

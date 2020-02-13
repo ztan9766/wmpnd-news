@@ -1,0 +1,17 @@
+<!--logs.wxml-->
+<navigation-bar title="新闻详情" showBack="true"/>
+<view class="container">
+  <view class="title">{{news.title}}</view>
+  <view class="info">
+    <text class="source">{{news.source}}</text>
+    <text class="date">{{news.formatedDate}}</text>
+    <text class="count">阅读 {{news.readCount}}</text>
+  </view>
+  <view class="content">
+    <view wx:for="{{news.content}}" wx:key="index">
+      <!-- 判断文章内容为文字还是图片 -->
+      <view wx:if="{{item.type === 'p'}}" class="paragraph">{{item.text}}</view>
+      <image wx:if="{{item.type === 'image'}}" class="image" src="{{item.src}}" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
